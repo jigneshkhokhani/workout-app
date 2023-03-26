@@ -71,3 +71,8 @@ group :development do
   gem 'guard-rspec', require: false
 end
 
+# Add gems for styling
+gem 'bootstrap', '~> 5.2.2'
+gem 'jquery-rails'
+gem "font-awesome-rails"
+
