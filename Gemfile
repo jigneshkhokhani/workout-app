@@ -75,6 +75,8 @@ end
 gem 'bootstrap', '~> 5.2.2'
 gem 'jquery-rails'
 gem "font-awesome-rails"
+# Use jquery-ui for pretty UI
+gem 'jquery-ui-rails'
 
 # User Authentication
 gem 'devise'
