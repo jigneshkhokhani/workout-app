@@ -29,3 +29,11 @@ bin/guard
     4) We should see content `Show off your workout`
 
 - Call the conteroller DashboardsController
+
+# 2) Creating User sign up feature spec
+
+1) Create a folder within the `features` folder called `users`
+2) In the `users` folder create a file called `signup_users_spec.rb`
+
+### Details of the spec expectation
+1) We should show the sign up success message after the sign up process.
