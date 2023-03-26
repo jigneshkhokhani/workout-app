@@ -1,24 +1,31 @@
-# README
+# Udemy course reference
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Workout-app : [Ruby on Rails 5 - BDD, RSpec and Capybara](https://www.udemy.com/course/ruby-rails-5-bdd-rspec-capybara)
 
-Things you may want to cover:
+# How to run the project
+Run below command from terminal to up all services from `docker-compose` file.
 
-* Ruby version
+```ruby
+docker-compose up
+```
 
-* System dependencies
+# How to run `rspec` automatically
+Run below command from terminal to watch changes and run specs.
 
-* Configuration
+```ruby
+bin/guard
+```
 
-* Database creation
+# 1) Creating home page feature spec
 
-* Database initialization
+1) Create a folder within the `spec` folder called `features`
+2) In the `features` folder create a file called `creating_homepage_spec.rb`
 
-* How to run the test suite
+### Details of the spec
+- When a user visits the home page, we want to see four things:
+    1) We should see a link called `Home`
+    2) We should see a link called `Athletes Den`
+    3) We should see content `Workout Lounge!`
+    4) We should see content `Show off your workout`
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Call the conteroller DashboardsController
