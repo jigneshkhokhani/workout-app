@@ -53,3 +53,9 @@ bin/guard
 ### Details of the spec expectation
 1) Able to see the success message of sign out.
 
+# 5) Feature Spec : Hide link after signin
+
+1) Make sure the user has signed up
+2) Make sure the user has signed in
+3) Upon successful signin, we should see only the 'Sign out' link
+4) We should neither see the 'Sign in' link nor the 'Sign up' link
