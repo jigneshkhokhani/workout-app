@@ -37,3 +37,11 @@ bin/guard
 
 ### Details of the spec expectation
 1) We should show the sign up success message after the sign up process.
+
+# 3) Creating User sign in feature spec
+
+1) In the `users` folder create a file called `signin_users_spec.rb`
+
+### Details of the spec expectation
+1) Able to see the success message of sign in.
+2) ABle to see the signed in user email on page after sign in.
