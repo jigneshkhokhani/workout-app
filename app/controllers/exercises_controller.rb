@@ -14,7 +14,7 @@ class ExercisesController < ApplicationController
       # redirect_to user_exercise_path(current_user, @exercise)
       redirect_to [current_user, @exercise] # we can also redirect like this
     else
-      flash[:alert] = 'Exercise has not been created'
+      flash.now[:alert] = 'Exercise has not been created'
       render :new, status: :unprocessable_entity
     end
   end
