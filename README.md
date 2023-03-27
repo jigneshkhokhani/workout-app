@@ -16,21 +16,7 @@ Run below command from terminal to watch changes and run specs.
 bin/guard
 ```
 
-# Introductoin to exercise management
-### Exercise management:
-1) User to sign in
-2) Upon successful sign in, user can click on a link "My Lounge" to go to an area that shows the details of her/his workouts
-3) User can then click on another link (to be styled as a button)
-4) User can fill out a form with the details of workout
-5) Alternatively, user can click on a link to go back to the lounge
-### Exercise facts:
-1) Has a duration in minutes
-2) Working details (essentially a description of the activity)
-3) Date of the activity
-4) Can only exist in the context of a user (exercise must be owned by a user)
-### Exercise expectations upon creation:
-1) The new exercise's user_id has to be the same as the logged in user's
-2) The current page should be the exercise's show page
+# Authentication management
 
 # 1) Creating home page feature spec
 
@@ -75,3 +61,29 @@ bin/guard
 2) Make sure the user has signed in
 3) Upon successful signin, we should see only the 'Sign out' link
 4) We should neither see the 'Sign in' link nor the 'Sign up' link
+
+# Introduction to exercise management
+
+### 6) Spec for Successfull creation of Exercise:
+1) User to sign in
+2) Upon successful sign in, user can click on a link "My Lounge" to go to an area that shows the details of her/his workouts
+3) User can then click on another link (to be styled as a button)
+4) User can fill out a form with the details of workout
+5) Alternatively, user can click on a link to go back to the lounge
+
+### 👉 Exercise facts:
+1) Has a duration in minutes
+2) Working details (essentially a description of the activity)
+3) Date of the activity
+4) Can only exist in the context of a user (exercise must be owned by a user)
+
+### 👉 Exercise expectations upon creation:
+1) The new exercise's user_id has to be the same as the logged in user's
+2) The current page should be the exercise's show page
+
+### 7) Spec for Unsuccessful creation of exercise
+
+1) Flash message is displayed upon unsuccessful creation of an exercise
+2) Ensure that duration_in_min is a number
+3) Workout details field is required
+4) Activity date is required
