@@ -81,3 +81,4 @@ gem 'jquery-ui-rails'
 # User Authentication
 gem 'devise'
 
+gem "d3-rails"
