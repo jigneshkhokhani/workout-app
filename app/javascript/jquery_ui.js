@@ -1,1 +1,1 @@
-//= require jquery-ui/widgets/datepicker
+//= require jquery-ui/widgets/datepicker.js
