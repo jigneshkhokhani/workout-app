@@ -24,6 +24,23 @@ class ExercisesController < ApplicationController
     @exercise = current_user.exercises.find(params[:id])
   end
 
+  def edit
+    @exercise = current_user.exercises.find(params[:id])
+  end
+
+  def update
+    @exercise = current_user.exercises.find(params[:id])
+
+    if @exercise.update(exercise_params)
+      flash[:notice] = 'Exercise has been updated'
+      # redirect_to user_exercise_path(current_user, @exercise)
+      redirect_to [current_user, @exercise] # we can also redirect like this
+    else
+      flash.now[:alert] = 'Exercise has not been updated'
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def exercise_params
