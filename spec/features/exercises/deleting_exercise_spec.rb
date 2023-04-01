@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.feature "Deleting Exercise" do
-  let(:user1) { User.create(email: 'user1@example.com', password: 'password') }
+  let(:user1) { User.create(first_name: 'u1_first', last_name: 'u1_last', email: 'user1@example.com', password: 'password') }
 
   before do
     @owner_exercise = user1.exercises.create!(duration_in_min: 48,
