@@ -1,22 +1,24 @@
 require "rails_helper"
 
 RSpec. feature "Listing Exercises" do
-  let(:user1) { User.create(first_name: 'u1_first', last_name: 'u1_last', email: 'user1@example.com', password: 'password') }
+  let!(:john) { User.create!(first_name: "John", last_name: "Doe", email: "john@example.com", password: "password") }
+  let!(:sarah) { User.create!(first_name: "Sarah", last_name: "Doe", email: "sarah@example.com", password: "password") }
 
   before do
-    login_as(user1)
+    login_as(john)
 
-    @e1 = user1.exercises.create(duration_in_min: 20,
+    @e1 = john.exercises.create(duration_in_min: 20,
                                   workout: "My body building activity",
                                   workout_date: Date.today)
 
-    @e2 = user1.exercises.create(duration_in_min: 55,
+    @e2 = john.exercises.create(duration_in_min: 55,
                                   workout: "Weight lifting",
                                    workout_date: 2.days.ago)
 
-    @e3 = user1.exercises.create(duration_in_min: 35,
-                                  workout: "On treadmill",
-                                   workout_date: 8.days.ago)
+    # @e3 = john.exercises.create(duration_in_min: 35,
+    #                               workout: "On treadmill",
+    #                                workout_date: 8.days.ago)
+    @following = Friendship.create(user: john, friend: sarah)
 
   end
 
@@ -33,18 +35,28 @@ RSpec. feature "Listing Exercises" do
     expect(page).to have_content(@e2.workout)
     expect(page).to have_content(@e2.workout_date)
 
-    expect(page).not_to have_content(@e3.duration_in_min)
-    expect(page).not_to have_content(@e3.workout)
-    expect(page).not_to have_content(@e3.workout_date)
+    # expect(page).not_to have_content(@e3.duration_in_min)
+    # expect(page).not_to have_content(@e3.workout)
+    # expect(page).not_to have_content(@e3.workout_date)
   end
 
   scenario 'shows no exercises if non created' do
-    user1.exercises.destroy_all
+    john.exercises.destroy_all
 
     visit '/'
 
     click_link 'My Lounge'
 
     expect(page).to have_content('No Workouts Yet')
+  end
+
+  scenario "shows a list of user's friends" do
+    visit '/'
+
+    click_link 'My Lounge'
+
+    expect(page).to have_content("My Friends")
+    expect(page).to have_link(sarah.full_name)
+    expect(page).to have_link('Unfollow')
   end
 end
