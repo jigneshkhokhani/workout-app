@@ -1,8 +1,8 @@
 require "rails_helper"
 
 RSpec.feature "Searching for User" do
-    let!(:john) { User.create!(first_name: "John", last_name: "Doe", email: "john@example.com", password: "password") }
-    let!(:sarah) { User.create!(first_name: "Sarah", last_name: "Doe", email: "sarah@example.com", password: "password") }
+  let!(:john) { User.create!(first_name: "John", last_name: "Doe", email: "john@example.com", password: "password") }
+  let!(:sarah) { User.create!(first_name: "Sarah", last_name: "Doe", email: "sarah@example.com", password: "password") }
 
   scenario "with existing name returns all those users" do
     visit '/'
