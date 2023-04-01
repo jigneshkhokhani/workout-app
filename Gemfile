@@ -82,3 +82,5 @@ gem 'jquery-ui-rails'
 gem 'devise'
 
 gem "d3-rails"
+
+gem 'will_paginate-bootstrap'
