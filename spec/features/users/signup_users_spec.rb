@@ -6,6 +6,8 @@ RSpec.feature 'User Signup' do
 
     click_link 'Sign up'
 
+    fill_in 'First name', with: 'u_first'
+    fill_in 'Last name', with: 'u_last'
     fill_in 'Email', with: 'user@example.com'
     fill_in 'Password', with: 'password'
     fill_in 'Password confirmation', with: 'password'
@@ -17,5 +19,9 @@ RSpec.feature 'User Signup' do
 
     expect(page).not_to have_link('Sign in')
     expect(page).not_to have_link('Sign up')
+
+    visit '/'
+
+    expect(page).to have_content('u_first u_last')
   end
 end
