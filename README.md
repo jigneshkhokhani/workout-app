@@ -87,3 +87,20 @@ bin/guard
 2) Ensure that duration_in_min is a number
 3) Workout details field is required
 4) Activity date is required
+
+# Introductoin to real time Message management
+
+### Room
+
+1) room name
+2) user id
+
+eg,
+if username: John Doe
+then will be room name: John-Doe
+
+### Message
+
+1) message body
+2) sender
+3) which room message belongs to
