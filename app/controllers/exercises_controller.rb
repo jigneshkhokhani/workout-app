@@ -4,6 +4,10 @@ class ExercisesController < ApplicationController
   def index
     @exercises = current_user.exercises
     @friends = current_user.friends
+    set_current_room
+    @message = Message.new
+    @messages = current_user.messages if current_user
+    @followers = Friendship.where(friend_id: current_user.id)
   end
 
   def new
@@ -54,5 +58,14 @@ class ExercisesController < ApplicationController
 
   def set_exercise
     @exercise = current_user.exercises.find(params[:id])
+  end
+
+  def set_current_room
+    @room = if params[:roomId]
+              Room.find(params[:roomId])
+            else
+              current_user.room
+            end
+    session[:current_room] = @room.id if @room
   end
 end

@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :friendships, dependent: :destroy
   has_many :friends, through: :friendships, class_name: "User"
   has_one :room
+  has_many :messages, dependent: :destroy
 
   validates :first_name, :last_name, presence: true
 
