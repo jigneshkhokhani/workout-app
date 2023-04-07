@@ -11,3 +11,5 @@ pin "jquery", to: "jquery.min.js", preload: true
 pin "jquery_ujs", to: "jquery_ujs.js", preload: true
 pin "jquery-ui", to: "jquery-ui.min.js", preload: true
 pin "d3", to: "d3.js", preload: true
+pin "@rails/actioncable", to: "actioncable.esm.js"
+pin_all_from "app/javascript/channels", under: "channels"
